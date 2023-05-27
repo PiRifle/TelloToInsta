@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        width: 1000px;
+        height: 1000px;
+        color: white;
+        display: flex;
+        background-image: url("https://images.unsplash.com/photo-1680879831221-21622d11b374?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=654&q=80");
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .frame {
+        backdrop-filter: blur(20px) brightness(0.4);
+        margin: 50px;
+        border-radius: 30px;
+        padding: 60px;
+        max-width: 760px;
+        max-height: 760px;
+        flex: auto;
+    }
+
+    .container {
+        top: 50%;
+        position: relative;
+        transform: translateY(-50%);
+    }
+
+    .tag {
+        margin: 15px;
+        padding: 15px;
+        font-size: xx-large;
+        border-left: 10px solid rgb(252, 252, 252);
+        word-wrap: break-word;
+        overflow: hidden;
+        overflow-wrap: break-word;
+
+        /* word-break: break-all; */
+    }
+    .watermark {
+        position: absolute;
+        left: 0px;
+        bottom: 0px;
+        margin: 5px;
+    }
+</style>
+<body>
+<div class="frame">
+    <div class="container">
+        <div class="tag" th:each="tello : ${posts}">
+            <span th:text="${tello.tell}" />
+        </div>
+    </div>
+</div>
+<div class="watermark">TelloRender by PRFL</div>
+</body>
+</html>
